@@ -1,38 +1,15 @@
 ﻿<div class="container-fluid h-100 d-flex justify-content-around align-items-center">
-    <NavLink class="nav-link py-3 px-4" href="" Match="@NavLinkMatch.All">
-        <span class="oi oi-document" aria-hidden="true"></span>
+    <NavLink class="nav-link py-3 px-4" href="">
+        <span class="oi oi-document text-white" aria-hidden="true"></span>
     </NavLink>
-    <NavLink class="nav-link" href="counter" Match="@NavLinkMatch.All">
-        <span class="oi oi-cart py-3 px-4" aria-hidden="true"></span>
+    <NavLink class="nav-link" href="counter">
+        <span class="oi oi-cart py-3 px-4 text-white" aria-hidden="true"></span>
     </NavLink>
-    <NavLink class="nav-link" href="fetchdata" Match="@NavLinkMatch.All">
-        <span class="oi oi-list-rich py-3 px-4"aria-hidden="true"></span>
+    <NavLink class="nav-link" href="fetchdata">
+        <span class="oi oi-list-rich py-3 px-4 text-white" aria-hidden="true"></span>
     </NavLink>
 </div>
 
 @code {
-    bool isRecipe = false;
-    bool isShopping = false;
-    bool isIngredient = false;
-
-    void setActive(int linke)
-    {
-        int link = 1;
-        isRecipe = isShopping = isIngredient = false;
-        Console.WriteLine("Here");
-        switch(link)
-        {
-            case 1:
-                isRecipe = true;
-                break;
-            case 2:
-                isShopping = true;
-                break;
-            case 3:
-                isIngredient = true;
-                break;
-            default:
-                break;
-        }
-    }
+   
 }

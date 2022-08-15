@@ -1,0 +1,22 @@
+﻿@page "/ingredients"
+
+<PageTitle>Ingredients</PageTitle>
+
+<h1>Ingredients</h1>
+
+
+
+<p role="status">Current count: @currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+    private Ingredients[] ingredients;    
+
+    private int currentCount = 0;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}
