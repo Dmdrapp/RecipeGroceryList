@@ -1,0 +1,12 @@
+﻿<div @onclick="Add" class="position-fixed bg-success rounded-circle" style="right: 30px; bottom: 95px; height: 60px; width: 60px;">
+    <span class="oi oi-plus text-white" style="margin: 19px 0 0 20px; font-size: 20px;"></span>
+</div>
+@code {
+    [Parameter]
+    public EventCallback onAddClicked { get; set; }
+
+    private async void Add()
+    {
+        await onAddClicked.InvokeAsync();
+    }
+}

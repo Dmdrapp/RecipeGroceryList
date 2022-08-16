@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace RecipeGroceryList.Shared.Enums
 {
-    public enum Length
+    public enum FoodType
     {
-        Millimeter,
-        Centimeter,
-        Meter,
-        Inch
+        Food,
+        Liquid,
+        Seasoning
     }
 }

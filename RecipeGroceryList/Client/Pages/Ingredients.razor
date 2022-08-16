@@ -16,20 +16,18 @@
     }
 </ul>
 
+<AddButton @ref="addButton" onAddClicked="AddIngredient"></AddButton>
+
 @code {
     private List<Ingredient> ingredients = new();
     private string? newIngredient;
+    private AddButton addButton;
 
-    private void AddIngredient()
+    public void AddIngredient()
     {
         if (!string.IsNullOrWhiteSpace(newIngredient))
         {
-            ingredients.Add(new Ingredient
-                {
-                    Name = newIngredient,
-                    Measurement = Length.Centimeter,
-                    Quantity = 1
-                });
+            ingredients.Add(new Ingredient(newIngredient, FoodType.Food));
         }
     }
 }
