@@ -1,22 +1,35 @@
 ﻿@page "/ingredients"
 @using RecipeGroceryList.Shared
+@using RecipeGroceryList.Shared.Enums
 
 <PageTitle>Ingredients</PageTitle>
 
 <h1>Ingredients</h1>
+    
+<input placeholder="Name" @bind="newIngredient" />
+<button @onclick="AddIngredient">Add</button>
 
-
-
-<p role="status">Current count: @currentCount</p>
-
-<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+<ul>
+    @foreach (var item in ingredients)
+    {
+        <li>@item.Name</li>
+    }
+</ul>
 
 @code {
+    private List<Ingredient> ingredients = new();
+    private string? newIngredient;
 
-    private int currentCount = 0;
-
-    private void IncrementCount()
+    private void AddIngredient()
     {
-        currentCount++;
+        if (!string.IsNullOrWhiteSpace(newIngredient))
+        {
+            ingredients.Add(new Ingredient
+                {
+                    Name = newIngredient,
+                    Measurement = Length.Centimeter,
+                    Quantity = 1
+                });
+        }
     }
 }
